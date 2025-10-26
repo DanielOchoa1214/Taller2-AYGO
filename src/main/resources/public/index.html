@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Taller2-AYGO</title>
+    </head>
+    <body>
+        <h1>Taller 2 AYGO</h1>
+        <form>
+            <label for="name">Nombre: </label><br>
+            <input type="text" id="name" name="name" placeholder="Ingresa tu nombre">
+            <br><br>
+            <input type="button" value="Submit" onclick="loadNames()">
+        </form>
+        <hr>
+        <div id="result" style="display: none;">
+            <table style="border: 1px solid black;">
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Name</th>
+                </tr>
+                </thead>
+                <tbody id="table"></tbody>
+            </table>
+        </div>
+        <script>
+            let loadNames = () => {
+                let nameVar = document.getElementById("name").value;
+                fetch("/name", {
+                    method: 'PUT',
+                    body: JSON.stringify(nameVar),
+                }).then(res => res.json())
+                    .then((res) => {
+                        let searchDiv = document.getElementById("table");
+                        buildLogTable(searchDiv, res);
+                        document.getElementById("result").setAttribute("style", "display: block");
+                    })
+            };
+
+            let buildLogTable = (container, names) => {
+                container.innerHTML = ""
+                for (const key in names) {
+                    let row = document.createElement("tr");
+                    let nameDate = document.createElement("td");
+                    nameDate.innerText = key;
+                    row.appendChild(nameDate);
+                    let name = document.createElement("td");
+                    name.innerText = names[key];
+                    row.appendChild(name);
+                    container.appendChild(row);
+                }
+            };
+        </script>
+    </body>
+</html>

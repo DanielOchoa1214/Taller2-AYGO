@@ -1,0 +1,15 @@
+services:
+  facade:
+    image: dano1214/backend-lab2-aygo:latest
+    container_name: facade
+    ports:
+      - "8081:8080"
+  back-1:
+    image: dano1214/backend-lab2-aygo:latest
+    container_name: back-1
+  back-2:
+    image: dano1214/backend-lab2-aygo:latest
+    container_name: back-2
+  back-3:
+    image: dano1214/backend-lab2-aygo:latest
+    container_name: back-3
