@@ -46,7 +46,7 @@ El punto de referencia central de la arquitectura se basa en el siguiente diagra
 
 <img width="723" height="490" alt="Screenshot 2025-10-26 at 6 53 49 PM" src="https://github.com/user-attachments/assets/9b006a70-aebb-4d78-8bdf-3d881d0f2f62" />
 
-En un principio la idea era depliegar una EC2 por cada Backend y una cuarta para el balanceador de cargas y el cliente JS. Pero debido a problemas de configuraciones, ya que JGroup no funciona bien out-of-the-box en AWS lo que se termino haciendo es desplegar la misma arquitectura en una EC2 separando las aplicaciones en contenedores diferentes, descritos en el diquiente `docker-compose.yml`
+En un principio la idea era depliegar una EC2 por cada Backend y una cuarta para el balanceador de cargas y el cliente JS. Pero debido a problemas de configuraciones (ya que JGroup no funciona bien out-of-the-box en AWS) lo que se termino haciendo es desplegar la misma arquitectura en una EC2 separando las aplicaciones en contenedores diferentes, descritos en el siquiente `docker-compose.yml`
 
 ```
 services:
@@ -68,7 +68,7 @@ services:
 
 ### Despliegue
 
-Para desplegar en AWS se siguieron los mismos pasos que en el laboratorio anterior para instalar docker, pero tambien se tuvo que instalar el plugin de docker compose siguiendo las oinstrucciones de esta [pagina](https://docs.docker.com/compose/install/linux/#install-the-plugin-manually). Luego de eso, simplemente corrimos el comando `docker compose up -d` para lanzar los contenedores y listo! La app quedo desplegado como puedes ver en estas imagenes y en el video
+Para desplegar en AWS se siguieron los mismos pasos que en el laboratorio anterior para instalar docker, pero tambien se tuvo que instalar el plugin de docker compose siguiendo las instrucciones de esta [pagina](https://docs.docker.com/compose/install/linux/#install-the-plugin-manually). Luego de eso, simplemente corrimos el comando `docker compose up -d` para lanzar los contenedores y listo! La app quedo desplegada como puedes ver en estas imagenes y en el video
 
 <img width="1535" height="174" alt="Screenshot 2025-10-26 at 6 59 59 PM" src="https://github.com/user-attachments/assets/ce1462da-84c5-4f41-b9f5-04e2ffb46bb3" />
 <img width="1782" height="755" alt="Screenshot 2025-10-26 at 7 00 15 PM" src="https://github.com/user-attachments/assets/00c955dc-1aa3-4234-8ed2-1729e1c15bfa" />
