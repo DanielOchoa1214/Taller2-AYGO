@@ -46,7 +46,7 @@ El punto de referencia central de la arquitectura se basa en el siguiente diagra
 
 <img width="723" height="490" alt="Screenshot 2025-10-26 at 6 53 49 PM" src="https://github.com/user-attachments/assets/9b006a70-aebb-4d78-8bdf-3d881d0f2f62" />
 
-En un principio la idea era depliegar una EC2 por cada Backend y una cuarta para el balanceador de cargas y el cliente JS. Pero debido a problemas de configuraciones (ya que JGroup no funciona bien out-of-the-box en AWS) lo que se termino haciendo es desplegar la misma arquitectura en una EC2 separando las aplicaciones en contenedores diferentes, descritos en el siquiente `docker-compose.yml`
+En un principio la idea era depliegar una EC2 por cada Backend y una cuarta para el balanceador de cargas y el cliente JS. Pero debido a problemas de configuraciones (ya que JGroup no funciona bien out-of-the-box en AWS) lo que se termino haciendo es desplegar la misma arquitectura en una EC2 separando las aplicaciones en contenedores diferentes, descritos en el siguiente `docker-compose.yml`
 
 ```
 services:
