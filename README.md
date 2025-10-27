@@ -1,4 +1,4 @@
-<img width="1785" height="817" alt="Screenshot 2025-10-26 at 6 40 05 PM" src="https://github.com/user-attachments/assets/6357a460-639c-424f-b180-1b87e99037d9" /># Taller 2 AREP - Daniel Sebastian Ochoa Urrego
+# Taller 2 AREP - Daniel Sebastian Ochoa Urrego
 
 Este proyecto construye una arquitectura con memoria sincronizada a traves de difrentes backends donde al enviar un nuevo requistro atravez de un frontend, este se envia a un balanceador de carga, donde usando la estrategia RoundRobin envia la peticion a uno de los 3 backends para que ellos se sincronicen usando JGroups.
 
